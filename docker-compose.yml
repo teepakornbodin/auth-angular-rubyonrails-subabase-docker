@@ -1,0 +1,31 @@
+services:
+  frontend:
+    build:
+      context: ./frontend/app
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend/app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend/app:/app
+    env_file:
+      - ./backend/app/.env
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+
+volumes:
+  redis_data:

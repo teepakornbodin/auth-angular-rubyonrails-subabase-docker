@@ -1,0 +1,62 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/mcp.json
+.history/
+
+# Windows alternate data stream files copied into WSL
+*:Zone.Identifier*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+backend/app/config/master.key
+backend/app/.kamal/secrets
+
+# Frontend
+frontend/app/node_modules/
+frontend/app/dist/
+frontend/app/tmp/
+frontend/app/out-tsc/
+frontend/app/bazel-out/
+frontend/app/.angular/cache/
+frontend/app/coverage/
+frontend/app/.sass-cache/
+frontend/app/npm-debug.log*
+frontend/app/yarn-debug.log*
+frontend/app/yarn-error.log*
+
+# Backend / Rails
+backend/app/log/*
+!backend/app/log/.keep
+backend/app/tmp/*
+!backend/app/tmp/.keep
+backend/app/storage/*
+!backend/app/storage/.keep
+backend/app/public/assets/
+backend/app/public/packs/
+backend/app/public/packs-test/
+backend/app/node_modules/
+backend/app/vendor/bundle/
+backend/app/.bundle/
+backend/app/coverage/
+backend/app/.byebug_history
+backend/app/.ruby-lsp/
+
+# Docker / local runtime
+*.pid
+*.seed
+*.sqlite3
+*.sqlite3-*
+docker-compose.override.yml
